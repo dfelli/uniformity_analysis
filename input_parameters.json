@@ -1,0 +1,50 @@
+{
+
+    "data_file" : "pixel_data_example",
+
+    "bin_size" : 5,
+    "pix_widthX" : 111,
+    "pix_widthY" : 111,
+
+    "centerX" : 255,
+    "centerY" : 257,
+
+    "perform_gaussian_analysis" : true,
+    "gaussian_start_pixel" : 6,
+    "gaussian_end_pixel" : 28,
+
+    "perform_slice_analysis" : true,
+    "angle_slice" : 90,
+
+    "radius_from_source" : 2.4,
+
+    "scaled" : false,
+    "arcsec_per_pixel" : 0.0012,
+    "scale_factor" : 1000,
+
+
+    "print_circles" : true,
+    "print_custom_intensity_levels" : false,
+    "levels" : [-250, 0, 25, 50, 100, 150, 200, 250, 300, 350, 400, 500],
+
+    "throw_zero_bin" : true,
+
+    "mask_center" : false,
+    "mask_inner_percentage" : 0.05,
+    "throw_negatives" : false,
+    "scoped" : false,
+    "scoped_angle_start" : 235,
+    "scoped_angle_end" : 250,
+    "throw_high_values" : false,
+    "high_threshold" : 300,
+
+    "print_contour" : true,
+    "print_radial" : true,
+    "print_gaussian_fit" : true,
+    "find_center_of_intensity" : true,
+    "inner_percentage" : 0.05,
+
+    "title_of_contour" : "my contour plot",
+    "title_of_radial_plot" : "my radial plot",
+    "title_of_uniformity_plot" : "my uniformity plot"
+}

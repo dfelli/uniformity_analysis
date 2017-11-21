@@ -1,0 +1,49 @@
+{
+    "data_file" : "pixel_data_example", // filename for data
+
+    "bin_size" : 5, // pixels lengths for concentric cuts
+    "pix_widthX" : 111, // x image (or sub image) length in pixels
+    "pix_widthY" : 111, // y image (or sub image) length in pixels
+
+    "centerX" : 255, //central x pixel with which to perform the analysis
+    "centerY" : 257, //central y pixel with which to perform the analysis
+
+    "perform_gaussian_analysis" : false, // should set scaled:false to get the pixels,then rerun the analysis specifying the end/start pixels
+    "gaussian_start_pixel" : 6, //lower pixel limit (in radial disance from centerx, centerY) where the algorithm  searches for a gaussian fit
+    "gaussian_end_pixel" : 28, //upper pixel limit (in radial disance from centerx, centerY) where the algorithm  searches for a gaussian fit
+
+    "perform_slice_analysis" : false, // forces scaled to be false. if perform_gaussian_analysis:true allows small angular portions of the image to undergo a gaussian analysis and plots it graphically.
+    "angle_slice" : 90, // setting this to low values like 1 can greatly increase model computational time. //angle segment with which to perform the small angular cuts for a gaussian fit
+
+    "radius_from_source" : 2.4, // (kpc) physical distance to convert angular sizes to physical distances
+
+    "scaled" : false, // allows for pixels to be scaled to angle
+    "arcsec_per_pixel" : 0.0012, // if scaled:true applies angular resolution of the pixels
+    "scale_factor" : 1000, // puts pixels to milli-arcsec
+
+
+    "print_circles" : true, // allow the concentric ring cuts to over lay on contour image
+    "print_custom_intensity_levels" : false, // allows you to specify the contour levels if desired
+    "levels" : [-250, 0, 25, 50, 100, 150, 200, 250, 300, 350, 400, 500], // if print_custom_intensity_levels:true one can specific the contour levels in ascending order
+
+    "throw_zero_bin" : true, //throws out the lowest bin which is usally desired because it is under sampled
+
+    "mask_center" : false, // allows you to ignore central pixels use mask_inner_percentage
+    "mask_inner_percentage" : 0.05, // if mask_center:true it hides a the central percentage of pixels around centerY and centerY.
+    "throw_negatives" : false, // sets negative pixel values to -1 and ignores them in the analysis
+    "scoped" : false, // allows you to analysis a particular angular segement use scoped_angle_start and scoped_angle_end
+    "scoped_angle_start" : 235, // if scoped:true the start angle for an analysis. CCW degrees from east
+    "scoped_angle_end" : 250, // if scoped:true the end angle for an analysis. CCW degrees from east
+    "throw_high_values" : false, // allows you to ignore pixels over a certain value. use high_threshold
+    "high_threshold" : 300, // if throw_high_values:true the threshold for which pixels over this value are ignored
+
+    "print_contour" : true,
+    "print_radial" : true,
+    "print_gaussian_fit" : true,
+    "find_center_of_intensity" : true, // if mask_center:true and find_center_of_intensity : true program will exit early. choose one of these options
+    "inner_percentage" : 0.05, // if find_center_of_intensity:true it uses central percentage of pixels around centerY and centerY to determine the center of intensity.
+
+    "title_of_contour" : "my contour plot",
+    "title_of_radial_plot" : "my radial plot",
+    "title_of_uniformity_plot" : "my uniformity plot",
+}
