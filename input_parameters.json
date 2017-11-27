@@ -14,7 +14,7 @@
     "gaussian_end_pixel" : 28,
 
     "perform_slice_analysis" : true,
-    "angle_slice" : 90,
+    "angle_slice" : 45,
 
     "radius_from_source" : 2.4,
 

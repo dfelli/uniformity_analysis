@@ -18,10 +18,10 @@ def main():
     parameters = {}
     with open(parameters_file) as json_file:
         parameters = json.load(json_file)
-    print(json.dumps(parameters, sort_keys=True, indent=4))
+    #print(json.dumps(parameters, sort_keys=True, indent=4))
 
 
-    parameters["scale"] = parameters["scale_factor"]*parameters["arcsec_per_pixel"]
+    scale = parameters["scale_factor"]*parameters["arcsec_per_pixel"]
     parameters["title_gaussian_fit"] = 'my gaussian plot '+str(parameters["gaussian_start_pixel"])+ ' to ' +str(parameters["gaussian_end_pixel"])
 
     if parameters["perform_slice_analysis"] == True and parameters["scaled"] == True:
@@ -800,14 +800,14 @@ def parseLine(line):
     return re.findall(r'\S+', line)
 
 # finds the center of intensity in a heat map
-def find_center_of_intensity_function(x, y, z, centerX, centerY, mask_inner_percentage, max_size):
+def find_center_of_intensity_function(x, y, z, centerX, centerY, inner_percentage, max_size):
     x_sum = 0
     x_sub_sum = 0 # represents the mass (M) in computing the center of mass  1/M *Sum m*r
     y_sum = 0
     y_sub_sum = 0
 
     for index in range(len(z)):
-        if ((x[index]-centerX)**2+(y[index]-centerY)**2)/max_size**2 < mask_inner_percentage:
+        if ((x[index]-centerX)**2+(y[index]-centerY)**2)/max_size**2 < inner_percentage:
             x_sum = x_sum + x[index]*z[index]
             x_sub_sum = x_sub_sum +z[index]
             y_sum = y_sum + y[index]*z[index]
