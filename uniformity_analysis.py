@@ -22,6 +22,7 @@ def main():
 
 
     scale = parameters["scale_factor"]*parameters["arcsec_per_pixel"]
+    parameters["scale"] = scale
     parameters["title_gaussian_fit"] = 'my gaussian plot '+str(parameters["gaussian_start_pixel"])+ ' to ' +str(parameters["gaussian_end_pixel"])
 
     if parameters["perform_slice_analysis"] == True and parameters["scaled"] == True:
